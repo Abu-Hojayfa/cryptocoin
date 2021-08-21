@@ -1,22 +1,17 @@
 import React from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  ScrollView,
-  FlatList,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { View, ScrollView } from "react-native";
+import AlertingBox from "../AlertingBox/AlertingBox";
 
-import { dummyData, COLORS, FONTS, images, icons, SIZES } from "../../constants";
 import HeaderTop from "./HeaderTop/HeaderTop";
+import NoticeArea from "./NoticeArea/NoticeArea";
 
 const HomeScreen = () => {
   return (
     <ScrollView>
-      <View style={{flex:1, paddingBottom: 130}}>
+      <View style={{ flex: 1, paddingBottom: 130 }}>
         <HeaderTop />
+        <AlertingBox />
+        <NoticeArea />
       </View>
     </ScrollView>
   );

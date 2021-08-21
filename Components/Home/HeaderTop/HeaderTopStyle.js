@@ -4,7 +4,7 @@ import { SIZES } from "../../../constants";
 export const styles = StyleSheet.create({
   topHead: {
     width: "100%",
-    height: 280,
+    height: 320,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     },
     shadowOpacity: 0.3,
     shadowRadius: 4.65,
-
     elevation: 8,
   },
   bGTop: {

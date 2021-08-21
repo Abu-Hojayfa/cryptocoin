@@ -14,6 +14,7 @@ import {
   icons,
   SIZES,
 } from "../../../constants";
+import FlatListPage from "../FlatListPage/FlatListPage";
 import { styles } from "./HeaderTopStyle";
 
 const HeaderTop = () => {
@@ -50,6 +51,7 @@ const HeaderTop = () => {
           </Text>
           <Text style={{ marginTop: 2, color: COLORS.white, ...FONTS.h3 }}>{dummyData.portfolio.changes} Last 24 hours</Text>
         </View>
+        <FlatListPage />
       </ImageBackground>
     </View>
   );
