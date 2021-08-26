@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { View, FlatList, TouchableOpacity, Text, Image } from "react-native";
 import { dummyData, SIZES } from "../../../constants";
 import { styles } from "./FlatListPageStyle";
+import { useNavigation } from "@react-navigation/native";
 
 const FlatListPage = () => {
+  const navigation = useNavigation();
   const [trending, setTrending] = useState(dummyData.trendingCurrencies);
 
   const renderItem = ({ item, index }) => (
@@ -12,6 +14,7 @@ const FlatListPage = () => {
         marginLeft: index == 0 ? SIZES.padding : 0,
         ...styles.touchAbleComp,
       }}
+      onPress={() => navigation.navigate("CryptoDetail", {currency: item })}
     >
       <View style={{ flexDirection: "row" }}>
         <View>
@@ -31,14 +34,19 @@ const FlatListPage = () => {
         <Text style={{ marginLeft: 25, ...styles.currencyValue }}>
           ${item.amount}
         </Text>
-        <Text style={{color: item.type == "I" ? "green" : "red", ...styles.currencyChanges}}>
+        <Text
+          style={{
+            color: item.type == "I" ? "green" : "red",
+            ...styles.currencyChanges,
+          }}
+        >
           {item.changes}
         </Text>
       </View>
     </TouchableOpacity>
   );
   return (
-    <View style={{ position: "absolute" , marginTop: "50%"}}>
+    <View style={{ position: "absolute", marginTop: "50%" }}>
       <Text style={styles.topText}>Trending</Text>
       <FlatList
         contentContainerStyle={styles.flatPAge}

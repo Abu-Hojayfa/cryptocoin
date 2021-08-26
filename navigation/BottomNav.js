@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../Components/Home/HomeScreen";
 import Prices from "../Components/Price/Prices";
@@ -10,145 +11,147 @@ const Tab = createBottomTabNavigator();
 
 const BottomNav = () => {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        headerShown: false,
-        tabBarShowLabel: false,
-        tabBarStyle: styles.fullBtmNav,
-      }}
-    >
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <View style={{ alignItems: "center", justifyContent: "center" }}>
-              <Image
-                source={require("../Assets/icons/home.png")}
-                resizeMode="contain"
-                style={{
-                  ...styles.iconStyle,
-                  tintColor: focused ? COLORS.primary : COLORS.black,
-                }}
-              />
-              <Text
-                style={{
-                  color: focused ? COLORS.primary : COLORS.black,
-                  ...FONTS.body5,
-                }}
-              >
-                HOME
-              </Text>
-            </View>
-          ),
+    
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarStyle: styles.fullBtmNav,
         }}
-      />
-
-      <Tab.Screen
-        name="Portfolio"
-        component={Prices}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <View style={{ alignItems: "center", justifyContent: "center" }}>
-              <Image
-                source={require("../Assets/icons/pie_chart.png")}
-                resizeMode="contain"
-                style={{
-                  ...styles.iconStyle,
-                  tintColor: focused ? COLORS.primary : COLORS.black,
-                }}
-              />
-              <Text
-                style={{
-                  color: focused ? COLORS.primary : COLORS.black,
-                  ...FONTS.body5,
-                }}
-              >
-                PORTFOLIO
-              </Text>
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Transaction"
-        component={Prices}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <TouchableOpacity style={styles.linearCustomBtn}>
-              <LinearGradient
-                colors={[COLORS.primary, COLORS.secondary]}
-                style={styles.linearGradient}
-              >
+      >
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
                 <Image
-                  source={require("../Assets/icons/transaction.png")}
+                  source={require("../Assets/icons/home.png")}
                   resizeMode="contain"
                   style={{
-                    width: 30,
-                    height: 30,
-                    tintColor: focused ? COLORS.lightGray1 : COLORS.white,
+                    ...styles.iconStyle,
+                    tintColor: focused ? COLORS.primary : COLORS.black,
                   }}
                 />
-              </LinearGradient>
-            </TouchableOpacity>
-          ),
-        }}
-      />
+                <Text
+                  style={{
+                    color: focused ? COLORS.primary : COLORS.black,
+                    ...FONTS.body5,
+                  }}
+                >
+                  HOME
+                </Text>
+              </View>
+            ),
+          }}
+        />
 
-      <Tab.Screen
-        name="Prices"
-        component={Prices}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <View style={{ alignItems: "center", justifyContent: "center" }}>
-              <Image
-                source={require("../Assets/icons/line_graph.png")}
-                resizeMode="contain"
-                style={{
-                  ...styles.iconStyle,
-                  tintColor: focused ? COLORS.primary : COLORS.black,
-                }}
-              />
-              <Text
-                style={{
-                  color: focused ? COLORS.primary : COLORS.black,
-                  ...FONTS.body5,
-                }}
-              >
-                PRICES
-              </Text>
-            </View>
-          ),
-        }}
-      />
+        <Tab.Screen
+          name="Portfolio"
+          component={Prices}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <Image
+                  source={require("../Assets/icons/pie_chart.png")}
+                  resizeMode="contain"
+                  style={{
+                    ...styles.iconStyle,
+                    tintColor: focused ? COLORS.primary : COLORS.black,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: focused ? COLORS.primary : COLORS.black,
+                    ...FONTS.body5,
+                  }}
+                >
+                  PORTFOLIO
+                </Text>
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Transaction"
+          component={Prices}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <TouchableOpacity style={styles.linearCustomBtn}>
+                <LinearGradient
+                  colors={[COLORS.primary, COLORS.secondary]}
+                  style={styles.linearGradient}
+                >
+                  <Image
+                    source={require("../Assets/icons/transaction.png")}
+                    resizeMode="contain"
+                    style={{
+                      width: 30,
+                      height: 30,
+                      tintColor: focused ? COLORS.lightGray1 : COLORS.white,
+                    }}
+                  />
+                </LinearGradient>
+              </TouchableOpacity>
+            ),
+          }}
+        />
 
-      <Tab.Screen
-        name="Settings"
-        component={Prices}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <View style={{ alignItems: "center", justifyContent: "center" }}>
-              <Image
-                source={require("../Assets/icons/settings.png")}
-                resizeMode="contain"
-                style={{
-                  ...styles.iconStyle,
-                  tintColor: focused ? COLORS.primary : COLORS.black,
-                }}
-              />
-              <Text
-                style={{
-                  color: focused ? COLORS.primary : COLORS.black,
-                  ...FONTS.body5,
-                }}
-              >
-                SETTINGS
-              </Text>
-            </View>
-          ),
-        }}
-      />
-    </Tab.Navigator>
+        <Tab.Screen
+          name="Prices"
+          component={Prices}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <Image
+                  source={require("../Assets/icons/line_graph.png")}
+                  resizeMode="contain"
+                  style={{
+                    ...styles.iconStyle,
+                    tintColor: focused ? COLORS.primary : COLORS.black,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: focused ? COLORS.primary : COLORS.black,
+                    ...FONTS.body5,
+                  }}
+                >
+                  PRICES
+                </Text>
+              </View>
+            ),
+          }}
+        />
+
+        <Tab.Screen
+          name="Settings"
+          component={Prices}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <Image
+                  source={require("../Assets/icons/settings.png")}
+                  resizeMode="contain"
+                  style={{
+                    ...styles.iconStyle,
+                    tintColor: focused ? COLORS.primary : COLORS.black,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: focused ? COLORS.primary : COLORS.black,
+                    ...FONTS.body5,
+                  }}
+                >
+                  SETTINGS
+                </Text>
+              </View>
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    
   );
 };
 
