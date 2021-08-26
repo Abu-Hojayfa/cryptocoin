@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { COLORS, FONTS, SIZES } from "../../../constants";
+import { SHADOW } from "../../../constants/theme";
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,14 +9,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: SIZES.radius,
     backgroundColor: COLORS.white,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.35,
-    elevation: 8,
+    ...SHADOW
   },
   headerPart: {
     flexDirection: "row",
@@ -34,5 +28,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between"
   }
+
   
 });

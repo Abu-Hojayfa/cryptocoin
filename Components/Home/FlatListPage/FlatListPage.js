@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, FlatList, TouchableOpacity, Text, Image } from "react-native";
+import {
+  View,
+  FlatList,
+  TouchableOpacity,
+  Text,
+  Image,
+  ScrollView,
+} from "react-native";
 import { dummyData, SIZES } from "../../../constants";
 import { styles } from "./FlatListPageStyle";
 import { useNavigation } from "@react-navigation/native";
@@ -14,7 +21,7 @@ const FlatListPage = () => {
         marginLeft: index == 0 ? SIZES.padding : 0,
         ...styles.touchAbleComp,
       }}
-      onPress={() => navigation.navigate("CryptoDetail", {currency: item })}
+      onPress={() => navigation.navigate("CryptoDetail", { currency: item })}
     >
       <View style={{ flexDirection: "row" }}>
         <View>
@@ -48,14 +55,16 @@ const FlatListPage = () => {
   return (
     <View style={{ position: "absolute", marginTop: "50%" }}>
       <Text style={styles.topText}>Trending</Text>
-      <FlatList
-        contentContainerStyle={styles.flatPAge}
-        data={trending}
-        renderItem={renderItem}
-        keyExtractor={(item) => `${item.id}`}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-      />
+      <ScrollView>
+        <FlatList
+          contentContainerStyle={styles.flatPAge}
+          data={trending}
+          renderItem={renderItem}
+          keyExtractor={(item) => `${item.id}`}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        />
+      </ScrollView>
     </View>
   );
 };

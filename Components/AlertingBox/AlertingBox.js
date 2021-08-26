@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { SIZES, COLORS, FONTS, icons } from "../../constants";
+import { SHADOW } from '../../constants/theme';
 
 const AlertingBox = ({customContainerStyle}) => {
   return (
@@ -19,14 +20,7 @@ const AlertingBox = ({customContainerStyle}) => {
 
 const styles = StyleSheet.create({
   shadow:{
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.30,
-    shadowRadius: 4.65,
-    elevation: 8,
+   ...SHADOW
   },
   alertBoxMain: {
     flexDirection: "row",

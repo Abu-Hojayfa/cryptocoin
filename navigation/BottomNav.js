@@ -1,11 +1,11 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../Components/Home/HomeScreen";
 import Prices from "../Components/Price/Prices";
 import { LinearGradient } from "expo-linear-gradient";
 import { COLORS, FONTS } from "../constants";
+import { SHADOW } from "../constants/theme";
 
 const Tab = createBottomTabNavigator();
 
@@ -173,15 +173,7 @@ const styles = StyleSheet.create({
   linearGradient: {
     padding: 15,
     borderRadius: 50,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.65,
-
-    elevation: 8,
+    ...SHADOW
   },
   linearCustomBtn: {
     alignItems: "center",

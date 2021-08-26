@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { SIZES, COLORS, FONTS } from "../../constants";
+import { SHADOW } from "../../constants/theme";
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,14 +11,7 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.white
   },
   shadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.35,
-    elevation: 8,
+    ...SHADOW
   },
   flatListData: {
     marginTop: SIZES.padding * 0.8,

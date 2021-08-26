@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Text, View, FlatList, TouchableOpacity, Image } from "react-native";
 import { dummyData, FONTS, icons } from "../../constants";
 import { styles } from "./TransHisStyle";
 
-const TransHis = () => {
+const TransHis = ({ history }) => {
   const [transitionHistory, setTransitionHistory] = useState(
     dummyData.transactionHistory
   );
+  
+  useEffect(() => {
+    if (history) {
+      setTransitionHistory(history);
+    }
+  },[history]);
 
   const renderItem = ({ item }) => (
     <TouchableOpacity style={styles.flatListPerItem}>

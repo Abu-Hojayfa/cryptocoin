@@ -1,18 +1,12 @@
 import { StyleSheet } from "react-native";
 import { SIZES } from "../../../constants";
+import { SHADOW } from "../../../constants/theme";
 
 export const styles = StyleSheet.create({
   topHead: {
     width: "100%",
     height: 320,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.65,
-    elevation: 8,
+    ...SHADOW
   },
   bGTop: {
     flex: 1,

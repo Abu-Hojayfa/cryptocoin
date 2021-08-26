@@ -36,18 +36,31 @@ export const SIZES = {
   height,
 };
 
-
-
 export const FONTS = {
   h1: {
-    fontFamily:"Roboto",
+    fontFamily: "Roboto",
     fontSize: SIZES.h1,
     fontWeight: "700",
     lineHeight: 36,
   },
-  h2: { fontFamily: "Roboto",fontWeight: "700", fontSize: SIZES.h2, lineHeight: 30 },
-  h3: { fontFamily: "Roboto",fontWeight: "700", fontSize: SIZES.h3, lineHeight: 22 },
-  h4: { fontFamily: "Roboto", fontWeight: "700",fontSize: SIZES.h4, lineHeight: 22 },
+  h2: {
+    fontFamily: "Roboto",
+    fontWeight: "700",
+    fontSize: SIZES.h2,
+    lineHeight: 30,
+  },
+  h3: {
+    fontFamily: "Roboto",
+    fontWeight: "700",
+    fontSize: SIZES.h3,
+    lineHeight: 22,
+  },
+  h4: {
+    fontFamily: "Roboto",
+    fontWeight: "700",
+    fontSize: SIZES.h4,
+    lineHeight: 22,
+  },
   body1: {
     fontFamily: "Roboto",
     fontSize: SIZES.body1,
@@ -72,8 +85,19 @@ export const FONTS = {
     fontFamily: "Roboto",
     fontSize: SIZES.body5,
     lineHeight: 22,
-    fontWeight: "700"
+    fontWeight: "700",
   },
+};
+
+export const SHADOW = {
+  shadowColor: "#000",
+  shadowOffset: {
+    width: 0,
+    height: 4,
+  },
+  shadowOpacity: 0.3,
+  shadowRadius: 4.35,
+  elevation: 8,
 };
 
 const appTheme = { COLORS, SIZES, FONTS };
