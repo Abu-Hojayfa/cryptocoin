@@ -9,24 +9,19 @@ import {
   VictoryScatter,
   VictoryAxis,
 } from "victory-native";
-import { COLORS, SIZES } from "../../../constants";
+import { COLORS, FONTS, SIZES } from "../../../constants";
+import { chartOptions } from "../../../constants/dummy";
+import DefaultTextBTn from "../../DefaultTextBtn/DefaultTextBTn";
 
 const Chart = ({ data }) => {
-  const {
-    image,
-    currency,
-    code,
-    amount,
-    changes,
-    type,
-    chartData,
-    chartOptions,
-  } = data;
+  const { image, currency, code, amount, changes, type, chartData } = data;
   const scrollX = new Animated.Value(0);
   const numberOfCharts = [1, 2, 3];
 
   const [chartOption, setChartOption] = useState(chartOptions);
   const [selectedOption, setSelectedOption] = useState(chartOption[0]);
+
+  const [mainData, setMainData] = useState(chartData);
 
   return (
     <View style={styles.container}>
@@ -78,7 +73,7 @@ const Chart = ({ data }) => {
                     data: { stroke: COLORS.secondary },
                     parent: { border: " 1px solid #ccc" },
                   }}
-                  data={chartData}
+                  data={mainData}
                   categories={{
                     x: ["15 min", "30 min", "45 min", "60 min"],
                     y: ["15", "30", "45"],
@@ -86,7 +81,7 @@ const Chart = ({ data }) => {
                 />
 
                 <VictoryScatter
-                  data={chartData}
+                  data={mainData}
                   size={7}
                   style={{
                     data: { fill: COLORS.secondary },
@@ -105,6 +100,31 @@ const Chart = ({ data }) => {
           </View>
         ))}
       </Animated.ScrollView>
+
+      {/* options */}
+      <View style={styles.timeOfChart}>
+        {chartOption.map((timeStamp) => (
+          <DefaultTextBTn
+            key={timeStamp.id}
+            label={timeStamp.label}
+            customTextContainerStyle={{
+              height: 30,
+              width: 60,
+              borderRadius: SIZES.radius,
+              backgroundColor:
+                selectedOption.id === timeStamp.id
+                  ? COLORS.primary
+                  : COLORS.lightGray,
+            }}
+            customLabelStyle={{
+              color:
+                selectedOption.id === timeStamp.id ? COLORS.white : COLORS.gray,
+              ...FONTS.body5,
+            }}
+            onPress={() => setSelectedOption(timeStamp)}
+          />
+        ))}
+      </View>
     </View>
   );
 };

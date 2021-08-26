@@ -1,5 +1,5 @@
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { View, TouchableOpacity, StyleSheet, Text, Image } from "react-native";
 import { COLORS, SIZES, FONTS, icons } from "../../constants";
 
@@ -17,9 +17,7 @@ const HeaderBar = ({ right }) => {
             style={styles.backBtnImg}
             resizeMode="contain"
           />
-          <Text style={{ marginLeft: SIZES.radius, ...FONTS.h2 }}>
-            Back
-          </Text>
+          <Text style={{ marginLeft: SIZES.radius, ...FONTS.h2 }}>Back</Text>
         </TouchableOpacity>
       </View>
 

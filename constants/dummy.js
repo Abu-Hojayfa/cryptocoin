@@ -472,7 +472,7 @@ export const transactionHistory = [
     },
 ];
 
-const chartOptions = [
+export const chartOptions = [
     {
         id: 1,
         label: "1 hr"

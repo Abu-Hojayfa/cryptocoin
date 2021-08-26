@@ -29,7 +29,7 @@ export const SIZES = {
   body2: 22,
   body3: 16,
   body4: 14,
-  body5: 10,
+  body5: 12,
 
   // app dimensions
   width,

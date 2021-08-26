@@ -27,6 +27,12 @@ export const styles = StyleSheet.create({
   },
   changesHead: {
     ...FONTS.body3
+  },
+  timeOfChart:{
+    width : "100%",
+    paddingHorizontal: SIZES.padding,
+    flexDirection: "row",
+    justifyContent: "space-between"
   }
   
 });
