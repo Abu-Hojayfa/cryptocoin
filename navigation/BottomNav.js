@@ -2,10 +2,10 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../Components/Home/HomeScreen";
-import Prices from "../Components/Price/Prices";
 import { LinearGradient } from "expo-linear-gradient";
 import { COLORS, FONTS } from "../constants";
 import { SHADOW } from "../constants/theme";
+import AllinOne from "../Components/AllInOne/AllinOne";
 
 const Tab = createBottomTabNavigator();
 
@@ -48,7 +48,7 @@ const BottomNav = () => {
 
         <Tab.Screen
           name="Portfolio"
-          component={Prices}
+          component={AllinOne}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={{ alignItems: "center", justifyContent: "center" }}>
@@ -74,7 +74,7 @@ const BottomNav = () => {
         />
         <Tab.Screen
           name="Transaction"
-          component={Prices}
+          component={AllinOne}
           options={{
             tabBarIcon: ({ focused }) => (
               <TouchableOpacity style={styles.linearCustomBtn}>
@@ -99,7 +99,7 @@ const BottomNav = () => {
 
         <Tab.Screen
           name="Prices"
-          component={Prices}
+          component={AllinOne}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={{ alignItems: "center", justifyContent: "center" }}>
@@ -126,7 +126,7 @@ const BottomNav = () => {
 
         <Tab.Screen
           name="Settings"
-          component={Prices}
+          component={AllinOne}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={{ alignItems: "center", justifyContent: "center" }}>
